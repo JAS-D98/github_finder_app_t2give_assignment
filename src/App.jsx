@@ -5,9 +5,11 @@ export default function App() {
   return (
    <>
     <Navbar/>
-    <div className='flex gap-4 mt-2 px-10'>
+    <div className='flex flex-col md:flex-row gap-4 px-10'>
+      <div className='mt-[6%] overflow-hidden flex flex-col items-center lg:block'>
       <Side/>
       <RepoContainer/>
+      </div>
     </div>
    </>
   )
