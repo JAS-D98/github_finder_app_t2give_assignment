@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function navbar() {
   return (
-    <div className="w-full min-h-10 bg-dark flex justify-between items-center px-3 py-3">
+    <div className="w-full min-h-10 bg-dark flex justify-between items-center px-10 py-3">
     <p className="text-3xl font-bold text-white">GITHUB FINDER</p>
     <p classname="text-2xl text-white"><span className='text-white text-2xl'>By</span> <a href="" className='text-2xl capitalize text-white underline'>Jasper Ngunjiri</a></p>
     <div>
