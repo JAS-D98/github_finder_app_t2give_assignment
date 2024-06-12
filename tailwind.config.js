@@ -8,6 +8,9 @@ export default {
     extend: {
       colors:{
         dark:'#070f2b',
+        repocard_bg:'#F1F1E6',
+        cream:'#FFF7D6',
+        blue:'#ccd2da',
       }
     },
   },
