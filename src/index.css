@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    @font-face {
+      font-family: "Open-Sans", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-optical-sizing: auto;
+      src: url(./assets/fonts/OpenSans_Condensed-Medium.ttf);
+      font-variation-settings:"wdth" 100;
+    }
+  }
