@@ -33,7 +33,13 @@ export default function App() {
       <div className='mt-[6%] overflow-hidden flex flex-col items-center lg:block'>
       <Side profileData={getData}/>
       <div>
-      <RepoContainer getUserRepoData={getUserRepoData.data} getUserFollowers={getUserFollowers.data} getUserFollowing={getUserFollowing.data}/>
+      {getData.loading ? (
+          <p className='text-2xl font-bold'>Loading Please Wait...</p>
+        ) : getData.error ? (
+          <p className='text-2xl font-bold'>Error fetching data: {getData.errorData}</p>
+        ) : 
+        <RepoContainer getUserRepoData={getUserRepoData.data} getUserFollowers={getUserFollowers.data} getUserFollowing={getUserFollowing.data}/>
+        }
       </div>
       </div>
     </div>

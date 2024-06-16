@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IoIosGitNetwork } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
 import { MdOutlineLink } from "react-icons/md";
 
 export default function RepoContainer({getUserRepoData, getUserFollowers, getUserFollowing}) {
+  const [search, setSearch]=useState("");
   return (
     <div className='w-full md:ml-[30%] overflow-hidden'>
         <p className='text-2xl font-bold mb-4 text-center md:text-left md:ml-[2%]'>Repositories (30)</p>
@@ -50,7 +51,9 @@ export default function RepoContainer({getUserRepoData, getUserFollowers, getUse
             <img src={card.avatar_url} alt={`image of ${card.login}`} className='w-full h-full'/>
             </div>
             <h1 className='text-dark font-bold'>{card.login}</h1>
+            <a href={card.html_url} target="_blank">
             <button className='bg-dark text-white text-sm px-3 py-1 rounded flex items-center gap-1'><span className='text-white text-xl'><MdOutlineLink /></span> View {card.login}</button>
+            </a>
             </div>
           ))}
         </div>
