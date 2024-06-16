@@ -6,6 +6,12 @@ import { MdLocationOn, MdLocationCity, MdGroups  } from "react-icons/md";
 
 export default function Side({profileData}) {
   return (
+  <div>
+    {profileData.loading ? (
+       <p className='text-2xl font-bold'>Loading Please Wait...</p>
+    ) : profileData.error ? (
+      <p className='text-2xl font-bold'>Error fetching data: {profileData.errorData}</p>
+    ) :
   <div className='flex flex-col items-center w-full md:w-[70%] lg:max-w-[25%] lg:min-h-[100vh] lg:fixed mb-4 lg:mb-0'>
     <div className="object-cover overflow-hidden w-full lg:h-[40vh] rounded-xl">
         <img src={profileData.data?.avatar_url} alt={`Github profile photo of ${profileData.data?.name}`} className='w-full h-full' />
@@ -23,6 +29,8 @@ export default function Side({profileData}) {
         <p className='flex items-center gap-2' ><MdGroups />{profileData.data?.following} Following</p>
         </div>
     </div>
-</div>
+  </div>
+  }
+  </div>
   )
 }
