@@ -26,7 +26,7 @@ export default function RepoContainer({getUserRepoData, getUserFollowers, getUse
 
        {/* fetch followers section */}
       <div className='mt-6 p-2'>
-        <p className='text-2xl font-bold mb-4 text-center md:text-left md:ml-[2%]'>Followers (30)</p>
+        <p className='text-2xl font-bold mb-4 text-center md:text-left md:ml-[2%]'>Followers</p>
         <div className='flex flex-col md:flex-row gap-2 flex-wrap w-[90%]'>
           {getUserFollowers?.map((card, i)=>(
             <div className='md:w-[15%] bg-cream flex flex-col items-center justify-center p-2 space-y-3' key={i}>
@@ -45,7 +45,7 @@ export default function RepoContainer({getUserRepoData, getUserFollowers, getUse
       
        {/* fetch following section */}
       <div className='mt-6 p-2'>
-        <p className='text-2xl font-bold mb-4 text-center md:text-left md:ml-[2%]'>Following (30)</p>
+        <p className='text-2xl font-bold mb-4 text-center md:text-left md:ml-[2%]'>Following</p>
         <div className='flex flex-col md:flex-row gap-2 flex-wrap w-[90%]'>
           {getUserFollowing?.map((card, i)=>(
             <div className='md:w-[15%] bg-cream flex flex-col items-center justify-center p-2 space-y-3' key={i}>
