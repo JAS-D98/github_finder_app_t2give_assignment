@@ -13,7 +13,7 @@ export default function Side({profileData}) {
       <p className='text-2xl font-bold'>Error fetching data: {profileData.errorData}</p>
     ) :
   <div className='flex flex-col items-center w-full md:w-[70%] lg:max-w-[25%] lg:min-h-[100vh] lg:fixed mb-4 lg:mb-0'>
-    <div className="object-cover overflow-hidden w-full lg:h-[40vh] rounded-xl">
+    <div className="object-cover overflow-hidden w-full lg:h-[40vh] rounded-xl mt-[20%] md:mt-0">
         <img src={profileData.data?.avatar_url} alt={`Github profile photo of ${profileData.data?.name}`} className='w-full h-full' />
     </div>
     <div className='flex flex-col items-center md:block w-full'>
