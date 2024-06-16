@@ -18,7 +18,7 @@ export const useGetData=create((set)=>({
                 set({...initialState, loading: false,error:true, errorData:'There was a problem fetching the user'})
             }
             const profileSearchJSONResponse=await profileSearchResponse.json();
-            console.log(profileSearchJSONResponse);
+            // console.log(profileSearchJSONResponse);
             set({...initialState, loading:false, data:profileSearchJSONResponse})
         }catch(error){
             console.log(error.message);

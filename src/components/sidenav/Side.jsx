@@ -6,11 +6,11 @@ import { MdLocationOn, MdLocationCity, MdGroups  } from "react-icons/md";
 
 export default function Side({profileData}) {
   return (
-  <div className='flex flex-col items-center lg:max-w-[25%] lg:min-h-[100vh] lg:fixed mb-4 lg:mb-0'>
-    <div className="object-cover overflow-hidden w-full h-[40vh] rounded-xl">
+  <div className='flex flex-col items-center w-full md:w-[70%] lg:max-w-[25%] lg:min-h-[100vh] lg:fixed mb-4 lg:mb-0'>
+    <div className="object-cover overflow-hidden w-full lg:h-[40vh] rounded-xl">
         <img src={profileData.data?.avatar_url} alt={`Github profile photo of ${profileData.data?.name}`} className='w-full h-full' />
     </div>
-    <div className='flex flex-col items-center md:block'>
+    <div className='flex flex-col items-center md:block w-full'>
         <p className='text-2xl font-bold text-dark'>{profileData.data?.name}</p>
         <p className="text-dark text-xl my-2">{profileData.data?.login}</p>
         <p className='text-center md:text-left text-md text-dark'>{profileData.data?.bio}</p>

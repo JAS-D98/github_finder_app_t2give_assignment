@@ -2,26 +2,27 @@ import { create } from 'zustand';
 
 const initialState={
     loading:false,
-    error:false,
     data:null,
+    error:false,
     errorData:null,
 }
 
-export const useGetRepositoryData=create((set)=>({
+export const useGetUserRepos=create((set)=>({
     ...initialState,
     execute:async(search)=>{
-        set({...initialState, loading: true});
+        set({...initialState, loading:true})
         try{
-            const fetchUserRepositoriesResponse=await fetch(`https://api.github.com/users/${search}/repos`)
-            if(!fetchUserRepositoriesResponse.ok){
-                set({...initialState, loading: false, error:true, errorData:`An issue occurred when fetching ${search} repositories`})   
+            const fetchUserRepos=await fetch(`https://api.github.com/users/${search}/repos`);
+            if(!fetchUserRepos){
+                set({...initialState, error: true, loading:false, errorData: 'Error Fetching the data', })
             }
-            const fetchUserRepositoriesResponseJSON=fetchUserRepositoriesResponse.json();
-            console.log(fetchUserRepositoriesResponseJSON);
-            set({...initialState, loading: false, data: fetchUserRepositoriesResponseJSON })
+            const fetchUserReposJSON=await fetchUserRepos.json();
+            console.log(fetchUserReposJSON);
+            set({...initialState, data: fetchUserReposJSON, loading:false})
+
         }catch(error){
-            console.log(error.message);
-            set({...initialState, loading: false, error:true, errorData:error.message})
+            console.log(error);
+            set({...initialState, error: true, errorData:error.message, loading:false})
         }
     }
-}))
+})) 
