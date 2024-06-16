@@ -34,7 +34,9 @@ export default function RepoContainer({getUserRepoData, getUserFollowers, getUse
             <img src={card.avatar_url} alt={`image of ${card.login}`} className='w-full h-full'/>
             </div>
             <h1 className='text-dark font-bold'>{card.login}</h1>
+            <a href={card.html_url} target="_blank">
             <button className='bg-dark text-white text-sm px-3 py-1 rounded flex items-center gap-1'><span className='text-white text-xl'><MdOutlineLink /></span> View {card.login}</button>
+            </a>
             </div>
           ))}
         </div>
