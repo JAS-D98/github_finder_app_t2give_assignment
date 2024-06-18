@@ -5,10 +5,14 @@ import { MdOutlineLink } from "react-icons/md";
 
 export default function RepoContainer({getUserRepoData, getUserFollowers, getUserFollowing, searchUser }) {
   const [search, setSearch]=useState("");
-  const handleSubmit=(e)=>{
-    e.preventDefault();
-    searchUser(search);
+  const handleSearch = (login) => {
+    setSearch(login);
+    searchUser(login);
   }
+  // const handleSubmit=(e)=>{
+  //   e.preventDefault();
+  //   searchUser(search);
+  // }
   return (
     <div className='w-full md:ml-[30%] overflow-hidden'>
         <p className='text-2xl font-bold mb-4 text-center md:text-left md:ml-[2%]'>Repositories (30)</p>
@@ -38,10 +42,7 @@ export default function RepoContainer({getUserRepoData, getUserFollowers, getUse
             <img src={card.avatar_url} alt={`image of ${card.login}`} className='w-full h-full'/>
             </div>
             <h1 className='text-dark font-bold'>{card.login}</h1>
-            <form onSubmit={handleSubmit}>
-              <input value={card.login} className="hidden" onChange={card.login}/>
-            <button onClick={()=>setSearch(card.login)} className='bg-dark text-white text-sm px-3 py-1 rounded flex items-center gap-1'><span className='text-white text-xl'><MdOutlineLink /></span> View {card.login}</button>
-            </form>
+            <button  onClick={() => handleSearch(card.login)} className='bg-dark text-white text-sm px-3 py-1 rounded flex items-center gap-1'><span className='text-white text-xl'><MdOutlineLink /></span> View {card.login}</button>
             </div>
           ))}
         </div>
@@ -58,10 +59,7 @@ export default function RepoContainer({getUserRepoData, getUserFollowers, getUse
             <img src={card.avatar_url} alt={`image of ${card.login}`} className='w-full h-full'/>
             </div>
             <h1 className='text-dark font-bold'>{card.login}</h1>
-            <form onSubmit={handleSubmit}>
-              <input value={card.login} className="hidden" onChange={card.login}/>
-            <button onClick={()=>setSearch(card.login)} className='bg-dark text-white text-sm px-3 py-1 rounded flex items-center gap-1'><span className='text-white text-xl'><MdOutlineLink /></span> View {card.login}</button>
-            </form>
+            <button  onClick={() => handleSearch(card.login)} className='bg-dark text-white text-sm px-3 py-1 rounded flex items-center gap-1'><span className='text-white text-xl'><MdOutlineLink /></span> View {card.login}</button>
             </div>
           ))}
         </div>
