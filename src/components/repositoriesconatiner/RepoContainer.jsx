@@ -7,7 +7,7 @@ export default function RepoContainer({getUserRepoData, getUserFollowers, getUse
   const [search, setSearch]=useState("");
   return (
     <div className='w-full md:ml-[30%] overflow-hidden'>
-        <p className='text-2xl font-bold mb-4 text-center md:text-left md:ml-[2%]'>Repositories (30)</p>
+        <p className='text-2xl font-bold mb-4 text-center md:text-left md:ml-[2%]'>Repositories</p>
         <div className='flex items-center justify-center flex-wrap gap-10 md:w-[70%] overflow-hidden'>
           {getUserRepoData?.map((repo, i)=>(
             <a href={repo.clone_url} target='blank' key={i}>
