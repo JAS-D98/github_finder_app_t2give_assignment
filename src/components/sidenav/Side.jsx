@@ -24,7 +24,7 @@ export default function Side({profileData}) {
         <div className='text-dark '>
         <p className='flex items-center gap-2' ><MdLocationOn />Location {profileData.data?.location}</p>
         <p className='flex items-center gap-2' ><MdLocationCity />{profileData.data?.company} Organization</p>
-        <p className='flex items-center gap-2' ><RiGitRepositoryFill />{profileData?.public_repos} Repositories</p>
+        <p className='flex items-center gap-2' ><RiGitRepositoryFill />{profileData.data?.public_repos} Repositories</p>
         <p className='flex items-center gap-2' ><MdGroups />{profileData.data?.followers} Followers</p>
         <p className='flex items-center gap-2' ><MdGroups />{profileData.data?.following} Following</p>
         </div>

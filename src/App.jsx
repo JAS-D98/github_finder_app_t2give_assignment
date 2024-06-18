@@ -38,7 +38,7 @@ export default function App() {
         ) : getData.error ? (
           <p className='text-2xl font-bold'>Error fetching data: {getData.errorData}</p>
         ) : 
-        <RepoContainer getUserRepoData={getUserRepoData.data} getUserFollowers={getUserFollowers.data} getUserFollowing={getUserFollowing.data}/>
+        <RepoContainer getUserRepoData={getUserRepoData.data} getUserFollowers={getUserFollowers.data} getUserFollowing={getUserFollowing.data}  searchUser={handleSearch}/>
         }
       </div>
       </div>

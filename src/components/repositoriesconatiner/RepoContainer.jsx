@@ -3,11 +3,15 @@ import { IoIosGitNetwork } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
 import { MdOutlineLink } from "react-icons/md";
 
-export default function RepoContainer({getUserRepoData, getUserFollowers, getUserFollowing}) {
+export default function RepoContainer({getUserRepoData, getUserFollowers, getUserFollowing, searchUser }) {
   const [search, setSearch]=useState("");
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    searchUser(search);
+  }
   return (
     <div className='w-full md:ml-[30%] overflow-hidden'>
-        <p className='text-2xl font-bold mb-4 text-center md:text-left md:ml-[2%]'>Repositories</p>
+        <p className='text-2xl font-bold mb-4 text-center md:text-left md:ml-[2%]'>Repositories (30)</p>
         <div className='flex items-center justify-center flex-wrap gap-10 md:w-[70%] overflow-hidden'>
           {getUserRepoData?.map((repo, i)=>(
             <a href={repo.clone_url} target='blank' key={i}>
@@ -34,9 +38,10 @@ export default function RepoContainer({getUserRepoData, getUserFollowers, getUse
             <img src={card.avatar_url} alt={`image of ${card.login}`} className='w-full h-full'/>
             </div>
             <h1 className='text-dark font-bold'>{card.login}</h1>
-            <a href={card.html_url} target="_blank">
-            <button className='bg-dark text-white text-sm px-3 py-1 rounded flex items-center gap-1'><span className='text-white text-xl'><MdOutlineLink /></span> View {card.login}</button>
-            </a>
+            <form onSubmit={handleSubmit}>
+              <input value={card.login} className="hidden" onChange={card.login}/>
+            <button onClick={()=>setSearch(card.login)} className='bg-dark text-white text-sm px-3 py-1 rounded flex items-center gap-1'><span className='text-white text-xl'><MdOutlineLink /></span> View {card.login}</button>
+            </form>
             </div>
           ))}
         </div>
@@ -53,9 +58,10 @@ export default function RepoContainer({getUserRepoData, getUserFollowers, getUse
             <img src={card.avatar_url} alt={`image of ${card.login}`} className='w-full h-full'/>
             </div>
             <h1 className='text-dark font-bold'>{card.login}</h1>
-            <a href={card.html_url} target="_blank">
-            <button className='bg-dark text-white text-sm px-3 py-1 rounded flex items-center gap-1'><span className='text-white text-xl'><MdOutlineLink /></span> View {card.login}</button>
-            </a>
+            <form onSubmit={handleSubmit}>
+              <input value={card.login} className="hidden" onChange={card.login}/>
+            <button onClick={()=>setSearch(card.login)} className='bg-dark text-white text-sm px-3 py-1 rounded flex items-center gap-1'><span className='text-white text-xl'><MdOutlineLink /></span> View {card.login}</button>
+            </form>
             </div>
           ))}
         </div>
