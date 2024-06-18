@@ -20,7 +20,7 @@ export default function Side({profileData}) {
         <p className='text-2xl font-bold text-dark'>{profileData.data?.name}</p>
         <p className="text-dark text-xl my-2">{profileData.data?.login}</p>
         <p className='text-center md:text-left text-md text-dark'>{profileData.data?.bio}</p>
-        <a href={profileData.data?.blog} target='blank'><Button/></a>
+        <a href={profileData.data?.html_url} target='blank'><Button/></a>
         <div className='text-dark '>
         <p className='flex items-center gap-2' ><MdLocationOn />Location {profileData.data?.location}</p>
         <p className='flex items-center gap-2' ><MdLocationCity />{profileData.data?.company} Organization</p>
