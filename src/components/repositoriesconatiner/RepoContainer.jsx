@@ -9,10 +9,6 @@ export default function RepoContainer({getUserRepoData, getUserFollowers, getUse
     setSearch(login);
     searchUser(login);
   }
-  // const handleSubmit=(e)=>{
-  //   e.preventDefault();
-  //   searchUser(search);
-  // }
   return (
     <div className='w-full md:ml-[30%] overflow-hidden'>
         <p className='text-2xl font-bold mb-4 text-center md:text-left md:ml-[2%]'>Repositories (30)</p>
